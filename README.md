@@ -141,7 +141,7 @@ Keep in mind that a smaller stopThreshold can give beeter accuracy, but it will 
 reach the answer.
 
 #### outfile
-This optional parameter is used to output an animation gif
+This optional parameter is used to output an animation gif file. It can be set like this:
 
 ```
 agd.outfile='animateGraDes.gif';
