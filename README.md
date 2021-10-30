@@ -160,7 +160,7 @@ agd.fillContour = true
 ```
 
 #### outfile
-This optional parameter is used to output an animation gif
+This optional parameter is used to output an animation gif file. It can be set like this:
 
 ```
 agd.outfile='animateGraDes.gif';
