@@ -1,6 +1,7 @@
 # Animated Gradient Desent
 ## Overview
-Gradient Descent can [be considered](https://builtin.com/data-science/gradient-descent) as one of the most important algorithms in machine learning and deep learning. It is widely
+Gradient Descent can [be considered](https://builtin.com/data-science/gradient-descent) as one of 
+the most important algorithms in machine learning and deep learning. It is widely
 used in training simple machine learning models to complex deep learning networks.
 
 This matlab script can generate an animation gif which visualizes how gradient descent works in a 3D or contour plot. 
@@ -13,7 +14,7 @@ Please refresh your browser to restart the animation gifs below.
 ### 3D plot
 ![gd3d](./agd3d.gif)
 ### Contour plot
-![Contour](./contour.gif)
+![Contour](./threeAlphas.gif)
 
 Important features:
 * Support both 3D surface plot and contour plot
@@ -21,6 +22,8 @@ Important features:
 * Allow user to adjust learning rate to understand the effect of it
 * Allow user to set starting point of gradient descent, so as to investigate saddle point effect
 * Allow user to set the maximum steps and stop threshold
+* Allow user to set an array of leaning rates to compare
+* Use either 2D contourf or 2D contour
 * Generate animation GIF which can be inserted into webpage and presentation
 
 ## Usage
@@ -62,6 +65,7 @@ agd.yrange = -10:1:10;
 ```
 
 #### learning rate
+##### Single alpha
 Learning rate alpha is an important tuning factor when training a model. By using 
 different values of alpha, animateGraDes can show how it affects the training.
 For example, if we change alpha from 0.1 to 0.2, we will get this contour plot instead.
@@ -78,6 +82,14 @@ Setting alpha greater than 0.3 for this cost function will make gradient descent
 never reach there.
 
 The default learning rate is set to 0.1, if not set.
+
+##### Compare different alpha values
+Set an array of alphas
+
+```
+agd.alpha = [0.05 0.1 0.2];
+```
+
 
 #### starting point
 If the starting point is too far away from the local min, it could take a long time for 
@@ -139,6 +151,13 @@ agd.stopThreshold = 1E-16;
 ```
 Keep in mind that a smaller stopThreshold can give beeter accuracy, but it will take (much) longer for gradient descent to 
 reach the answer.
+
+#### Use contourf or contour
+It is an optional flag, and default to false.
+
+```
+agd.fillContour = true
+```
 
 #### outfile
 This optional parameter is used to output an animation gif
